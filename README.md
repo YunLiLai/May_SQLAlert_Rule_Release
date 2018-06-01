@@ -25,22 +25,28 @@ iTAP层数据监控：
 
 2.3 配置
       2.3.1 全局配置 rules/globals/sys.rule：
-             __sys_lang__ = "cn";                    配置语言环境。
-             __es_host__ = "localhost:9200";      配置 ES 集群地址及端口号
-             __enable_alert_xxx__ = true/false;    配置输出项
+             __sys_lang__ = "cn";                    //配置语言环境
+
+
+             __es_host__ = "localhost:9200";      //配置 ES 集群地址及端口号
+
+
+             __enable_alert_xxx__ = true/false;    //配置输出项
       
       
       2.3.2 规则配置
-      修改，添加 需要监控的itap服务器名称 (itap名称可在运行itap机器的/usr/local/info/desc_nodeinfo.json 获得)
+      修改，添加 需要监控的itap服务器名称 (itap名称可在运行itap机器的/usr/local/etc/desc_nodeinfo.json 获得):
           ./rules/alert/itap/cfg/cn/nodata-index.rule 或 ./rules/alert/itap/cfg/en/nodata-index.rule
           ./rules/alert/itap/cfg/cn/nodata-link.rule 或 ./rules/alert/itap/cfg/en/nodata-link.rule
-      修改变量
+      修改变量:
+
           __itaplist__
           __itapdict__
           
           
       2.3.3 如需要修改规则参数，请到 ./rules/alert/ 对应的目录下进行修改
            ./rules/alert/<proto>/<type>/<name>.rule
+
       用 HTTP 延迟规则为例（其他规则类似）
             规则文件为:  ./rules/alert/http/latency/sip.rule
             中文配置文件: ./rules/alert/http/latency/cfg/cn/sip.rule
