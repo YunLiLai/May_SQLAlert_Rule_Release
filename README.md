@@ -9,7 +9,8 @@ TCP扫描规则 ---  alert/tcp/flows/syn-sip.rule <br>
 HTTP错误规则 ---  alert/http/status/sip.rule <br>
 HTTP延迟规则 ---  alert/http/latency/sip.rule <br>
 DNS错误规则  --- alert/dns/status/sip.rule <br>
-以上task已经在 rules/tasks/alert-client-base.json 配置中添加 <br>
+以上task已经在 rules/tasks/alert-client-base.json 配置中添加 
+
 `
 2. 安装及运行 
 
@@ -18,12 +19,12 @@ DNS错误规则  --- alert/dns/status/sip.rule <br>
         cd sqlalert-1.0.4
 
 
-2.2 目录说明<br>
+2.2 目录说明
         ./bin     - 为 sqlalert 可执行文件目录
-        ./rules  - 为规则库目录，即 sqlalert 的运行目录<br>
+        ./rules  - 为规则库目录，即 sqlalert 的运行目录
 
 
-2.3 配置<br>
+2.3 配置
       2.3.1 全局配置 rules/globals/sys.rule：
         __sys_lang__ = "cn";                    //配置语言环境
         __es_host__ = "localhost:9200";      //配置 ES 集群地址及端口号
@@ -52,5 +53,4 @@ DNS错误规则  --- alert/dns/status/sip.rule <br>
       运行规则前，请确认配置好了ES地址; 如果要运行监控数据那些规则请确认itap名称是填写正确
             cd sqlalert-1.0.4
             ./bin/sqlalert --etc ./rules --task tasks/alert-client-base.json
-
-
+`
