@@ -25,9 +25,9 @@ iTAP层数据监控：
 
 2.3 配置
       2.3.1 全局配置 rules/globals/sys.rule：
-      __sys_lang__ = "cn";                // 配置语言环境。
-      __es_host__ = "localhost:9200";     // 配置 ES 集群地址及端口号
-      __enable_alert_xxx__ = true/false;  // 配置输出项
+             __sys_lang__ = "cn";                    配置语言环境。
+             __es_host__ = "localhost:9200";      配置 ES 集群地址及端口号
+             __enable_alert_xxx__ = true/false;    配置输出项
       
       
       2.3.2 规则配置
