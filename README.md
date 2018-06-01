@@ -3,31 +3,31 @@
 1. 概览<br>
 五月份计划发布sqlalert规则6条,如下：<br>
 iTAP层数据监控：<br>
-    索引内有无数据规则  ---  alert/itap/nodta-index.rule <br>
-    L2层有无数据规则  ---  alert/itap/nodata-link.rule <br>
-    TCP扫描规则 ---  alert/tcp/flows/syn-sip.rule <br>
-    HTTP错误规则 ---  alert/http/status/sip.rule <br>
-    HTTP延迟规则 ---  alert/http/latency/sip.rule <br>
-    DNS错误规则  --- alert/dns/status/sip.rule <br>
+索引内有无数据规则  ---  alert/itap/nodta-index.rule <br>
+L2层有无数据规则  ---  alert/itap/nodata-link.rule <br>
+TCP扫描规则 ---  alert/tcp/flows/syn-sip.rule <br>
+HTTP错误规则 ---  alert/http/status/sip.rule <br>
+HTTP延迟规则 ---  alert/http/latency/sip.rule <br>
+DNS错误规则  --- alert/dns/status/sip.rule <br>
 以上task已经在 rules/tasks/alert-client-base.json 配置中添加 <br>
-
+`
 2. 安装及运行 
 
-2.1 无需要安装，使用如下命令解压后即可使用<br>
-        tar -zxvf sqlalert-1.0.4<br>
-        cd sqlalert-1.0.4<br>
+2.1 无需要安装，使用如下命令解压后即可使用
+        tar -zxvf sqlalert-1.0.4
+        cd sqlalert-1.0.4
 
 
 2.2 目录说明<br>
-        ./bin     - 为 sqlalert 可执行文件目录<br>
+        ./bin     - 为 sqlalert 可执行文件目录
         ./rules  - 为规则库目录，即 sqlalert 的运行目录<br>
 
 
 2.3 配置<br>
-      2.3.1 全局配置 rules/globals/sys.rule：<br>
-        __sys_lang__ = "cn";                    //配置语言环境<br>
-        __es_host__ = "localhost:9200";      //配置 ES 集群地址及端口号<br>
-        __enable_alert_xxx__ = true/false;    //配置输出项<br>
+      2.3.1 全局配置 rules/globals/sys.rule：
+        __sys_lang__ = "cn";                    //配置语言环境
+        __es_host__ = "localhost:9200";      //配置 ES 集群地址及端口号
+        __enable_alert_xxx__ = true/false;    //配置输出项
             
       2.3.2 规则配置
       修改，添加 需要监控的itap服务器名称 (itap名称可在运行itap机器的/usr/local/etc/desc_nodeinfo.json 获得):
